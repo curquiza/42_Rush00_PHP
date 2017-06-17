@@ -15,6 +15,7 @@
             if (strstr($elem[1], "Poney") !== FALSE) : ?>
                 <div class="horse"><div align=center>
                     <p><?php echo $elem[2] ?></p>
+                    <div style="font-style:italic"><?php echo $elem[1] ?></div>
                     <div><br /><img src="<?php echo $elem[6] ?>"/></div><br />
                     <div><?php echo $elem[4] ?> $</div>
                     <form action="add_to_cart.php" method="POST">
