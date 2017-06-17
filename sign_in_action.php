@@ -23,22 +23,7 @@ if (ft_auth($_POST['login'], $_POST['passwd']) === TRUE)
 else
 {
     $_SESSION['logged_on_user'] = "";
-    ?>
-
-    <html>
-    <head>
-        <?php include("settings.php"); ?>
-    </head>
-    <body>
-    <?php include("header.php"); ?>
-    <H1>Sign in</H1> <br />
-    <p> Sorry, we were enable to log you in... Try again</p> <br />
-    <?php include("sign_in_form.php"); ft_sign_in_form(); ?>
-    <?php include("footer.php"); ?>
-    </body>
-    </html>
-
-<?php  
+    include("sign_in_error.php");
 }
 ?>
     
