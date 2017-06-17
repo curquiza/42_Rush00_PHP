@@ -22,6 +22,7 @@ else
 ?>
 <br />
 <div style="display: flex; justify-content: center">
+    <a class="category2" href="all_products.php">All</a>
     <a class="category" href="horse.php">Horses</a>
     <a class="category" href="poney.php">Poneys</a>
     <a class="category" href="foal.php">Foals</a>

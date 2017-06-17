@@ -7,9 +7,10 @@
     <H2>Foals</H2>
         <div align=center><div class="product">
         <?php
-        $fd = fopen("bdd/horses.csv", "r");
+        $fd = fopen("bdd/product.csv", "r");
         while (($line = fgetcsv($fd, "r")) !== FALSE)
             $data[] = $line;
+        fclose($fd);
         foreach($data as $elem)
         {
             if (strstr($elem[1], "Foal") !== FALSE) : ?>
