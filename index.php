@@ -3,9 +3,7 @@ session_start();
 ?>
 <html>
 <head>
-    <title> PoneyLand </title>
-    <link href="index.css" type="text/css" rel="stylesheet"/>
-    <meta charset="utf-8" />
+    <?php include("settings.php"); ?>
 </head>
 <body>
     <?php include("header.php"); ?>

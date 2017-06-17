@@ -10,8 +10,8 @@ html
     background-color:  blanchedalmond;
 }
 
-footer
+.footer
 {
-    text-align: left;
-    font-family: monospace, sans-serif;
+    text-align: center;
+    font-family: Verdana, sans-serif;
 }
