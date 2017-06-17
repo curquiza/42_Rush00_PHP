@@ -5,6 +5,11 @@
     text-decoration:     none; 
 }
 
+H2
+{
+    text-align: center;
+}
+
 html
 {
     font-family: Verdana, sans-serif;
@@ -14,15 +19,56 @@ html
 .category
 {
     text-align: center;
-    border: 2px solid cadetblue;
+    background-color: cornflowerblue;
+    color: white;
     margin: 10px;
-    padding: 5px;
+    padding: 10px;
 }
+
+.product
+{
+    display: table-cell;
+    width :100%;
+}
+
+.button_buy
+{
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid grey;
+    background-color: aliceblue;
+    border-radius: 8px;
+    padding: 2px;
+}
+
+/*
+.span
+{
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid grey;
+    background-color: aliceblue;
+    border-radius: 8px;
+    padding: 2px;
+    box-shadow: 2px 2px 1px cyan;
+}
+}
+
+.button_buy:hover span
+{
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 2px 2px 1px red;
+}
+*/
 
 .horse
 {
-    display: flex;
-    justify-content: center;
+    background-color: white;
+    margin: 10px;
+    padding: 5px;
+    display: inline-table;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .footer
