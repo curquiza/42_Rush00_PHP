@@ -17,7 +17,7 @@
                     <p><?php echo $elem[2] ?></p>
                     <div><br /><img src="<?php echo $elem[6] ?>"/></div><br />
                     <div><?php echo $elem[4] ?> $</div>
-                    <form action="add_to_cart.php">
+                    <form action="add_to_cart.php" method="POST">
                         <input class="button_buy" type="button" name="<?php echo $elem[0] ?>" value="I want one !">
                     </form><br /></div>
                 </div>
