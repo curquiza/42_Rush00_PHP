@@ -16,6 +16,12 @@ else
 }
 ?>
 <br />
+<div>
+    <a class="category" href="horse.php">Horses</a>
+    <a class="category" href="poney.php">Poneys</a>
+    <a class="category" href="foal.php">Foals</a>
+    <a class="category" href="legendary.php">Legendary</a>
+</div>
+<br />
 <hr color=grey size=2% />
 <br />
-
