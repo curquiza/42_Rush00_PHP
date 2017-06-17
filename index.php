@@ -3,7 +3,7 @@ session_start();
 ?>
 <html>
 <head>
-    <title> Coco.com </title>
+    <title> PoneyLand </title>
     <link href="index.css" type="text/css" rel="stylesheet"/>
     <meta charset="utf-8" />
 </head>
