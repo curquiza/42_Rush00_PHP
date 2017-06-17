@@ -1,10 +1,9 @@
-<h1> Coco.com : achète ton poney en ligne !</h1>
-    
+<h1> PoneyLand : buy your poney online !</h1> <br/>  
 <?php
 if ($_SESSION['logged_on_user'] == NULL)
 {
 ?>
-<a href="sign_in.html" > SIGN IN </a> <br />
+<a href="sign_in.php" > SIGN IN </a> <br />
 <a href="sign_up.html" > SIGN UP </a> <br />
 <?php
 }

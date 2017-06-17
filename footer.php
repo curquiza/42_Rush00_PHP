@@ -1,7 +1,8 @@
-<footer>
+<footer class="footer">
     <br />
     <hr color=grey size=2% />
     <br/>
-    Sarah Franc <br/>
-    Pauline Frey
+    <p> Sarah Franc </p>
+    <p> Pauline Frey </p>
+    <p> 2017 </p>
 </footer>
