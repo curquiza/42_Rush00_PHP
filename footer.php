@@ -1,6 +1,6 @@
 <footer class="footer">
     <br />
-    <hr color=grey size=2% />
+    <hr>
     <br/>
     <p> Sarah Franc </p>
     <p> Pauline Frey </p>

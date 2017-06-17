@@ -16,6 +16,12 @@ html
     background-color:  aliceblue;
 }
 
+hr
+{
+    color: grey;
+    background-color: grey;
+    height: 2px;
+}
 .category
 {
     text-align: center;

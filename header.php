@@ -28,5 +28,5 @@ else
     <a class="category" href="legendary.php">Legendary</a>
 </div>
 <br />
-<hr color=grey size=2% />
+<hr  />
 <br />
