@@ -9,6 +9,7 @@ session_start();
     <body>
     <?php include("header.php"); ?>
     <H1>Sign Up</H1> <br />
+<!--
     <form action="sign_up_action.php" method="POST">
         Choose a login: <input type="text" name="login" value="">
         <br/ >
@@ -16,6 +17,7 @@ session_start();
         <br/ >
         <input type="submit" name="submit" value="OK">
     </form> <br />
+-->
     
 
 <?php
@@ -59,7 +61,19 @@ function    ft_check_login($list, $new_login)
                 echo '<html><body><br /><a href="index.php">Let\'s go shopping !</a></body></html>';
             }
             else
-                echo "Enable to create your account... Please, Try again !\n";
+            {
+                ?>
+                <p> Enable to create your account... Please, Try again ! <p/> <br />
+                <form action="sign_up_action.php" method="POST">
+                    Choose a login: <input type="text" name="login" value="">
+                    <br/ >
+                    Create a password: <input type="password" name="passwd" value="">
+                    <br/ >
+                    <input type="submit" name="submit" value="OK">
+                </form> <br />
+            <?php
+            }
+                
         }
     }
     else
