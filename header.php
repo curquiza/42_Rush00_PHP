@@ -10,6 +10,7 @@ if ($_SESSION['logged_on_user'] == NULL)
 ?>
 <a href="sign_in.php" > SIGN IN </a> <br />
 <a href="sign_up.php" > SIGN UP </a> <br />
+<div><a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a><span class="glyphicon">&#xe116;</span></div>
 <?php
 }
 else

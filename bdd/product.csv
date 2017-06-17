@@ -5,7 +5,14 @@
 5,Horse,Marwari,painted black,9999,100,https://ouranos.equideow.com/media/equideo/image/chevaux/adulte/marwari/normal/300/pie-ov-nr.png
 6,Poney,Shetland,alezan,999,100,https://www.equideow.com/media/equideo/image/chevaux/adulte/shetland/normal/300/alz.png
 7,Poney,Connemara,bay,1599,100,https://www.equideow.com/media/equideo/image/chevaux/adulte/poney-primitif/normal/300/bai-b.png
-8,"Foal, Poney",Shetland,alezan,499,100,https://ouranos.equideow.com/media/equideo/image/chevaux/poulain/shetland/normal/300/alz.png
-9,"Foal, Horse",Mustang,painted,899,100,https://ouranos.equideow.com/media/equideo/image/chevaux/poulain/generique1/normal/300/bkt-alz-b.png
+8,"Foal, Poney",Shetland,alezan,499,20,https://ouranos.equideow.com/media/equideo/image/chevaux/poulain/shetland/normal/300/alz.png
+9,"Foal, Horse",Mustang,painted,899,20,https://ouranos.equideow.com/media/equideo/image/chevaux/poulain/generique1/normal/300/bkt-alz-b.png
 10,"Legendary, Horse",Unicorn,white,500000,1,https://i.skyrock.net/6802/79146802/pics/3013556331_1_21_vMvQTm2E.png
 11,"Legendary, Horse",Pegasus,black,500000,1,https://ouranos.equideow.com/media/equideo/image/chevaux/adulte/frison/pegase/300/nr.png
+12,Horse,Camargue,white,2999,100,https://www.equideow.com/media/equideo/image/chevaux/adulte/primitif/normal/300/gr-c.png
+13,"Legendary, Horse",Big Pegasus,white,500000,1,https://ouranos.preprod.equideow.com/media/equideo/image/chevaux/adulte/shire/pegase/300/gr-c.png?1828806360
+14,Poney,Dartmoor,"brown, black",1199,50,https://www.equideow.com/media/equideo/image/chevaux/adulte/poney-leger/normal/300/nr.png
+15,"Legendary, Horse",Old Unicorn,white,500000,1,https://ouranos.equideow.com/media/equideo/image/chevaux/adulte/poney-sport/licorne/300/gr-t.png
+16,"Foal, Poney",Fjord,isabel,499,50,https://i.skyrock.net/2403/75432403/pics/2942905635_1_3.png
+17,Poney,Fjord,isabel,1799,100,https://www.equideow.com/media/equideo/image/chevaux/adulte/fjord/normal/300/bbk.png
+18,"Legendary, Poney",8-leg Fire Poney,fire,500000,1,https://s-media-cache-ak0.pinimg.com/736x/da/4b/7a/da4b7aa3609ef0d096b5b504af6352a4.jpg
