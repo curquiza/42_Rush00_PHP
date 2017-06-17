@@ -23,11 +23,22 @@ else
 ?>
 <br />
 <div style="display: flex; justify-content: center">
-    <a class="category2" href="all_products.php">All</a>
-    <a class="category" href="horse.php">Horses</a>
-    <a class="category" href="poney.php">Poneys</a>
-    <a class="category" href="foal.php">Foals</a>
-    <a class="category" href="legendary.php">Legendary</a>
+    <a class="category2" href="all_products.php">All</a> 
+    <?php
+    include("handler_csv.php");
+    $data = ft_getcsv("bdd/category.csv");
+    foreach($data as $elem)
+    {
+        ?><a class="category" href="all_products.php?category=<?php echo $elem[0] ?>"><?php echo $elem[0] ?></a><?php
+    }
+        
+?>
+<!--
+//    <a class="category" href="horse.php">Horses</a>
+//    <a class="category" href="poney.php">Poneys</a>
+//    <a class="category" href="foal.php">Foals</a>
+//    <a class="category" href="legendary.php">Legendary</a>
+-->
 </div>
 <br />
 <hr  />
