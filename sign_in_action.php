@@ -9,7 +9,7 @@ function ft_auth($login, $passwd)
     $list = unserialize(file_get_contents("private/passwd"));
     foreach($list as $elem)
     {
-        if ($elem['login'] === $login && $elem['passwd'] === hash("whirlpool", $passwd))
+        if ($elem['login'] === $login && $elem['passwd'] === hash("sha512", $passwd))
             return (TRUE);
     }
     return (FALSE);
