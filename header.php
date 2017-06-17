@@ -4,7 +4,7 @@ if ($_SESSION['logged_on_user'] == NULL)
 {
 ?>
 <a href="sign_in.php" > SIGN IN </a> <br />
-<a href="sign_up.html" > SIGN UP </a> <br />
+<a href="sign_up.php" > SIGN UP </a> <br />
 <?php
 }
 else
