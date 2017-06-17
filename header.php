@@ -15,7 +15,7 @@ if ($_SESSION['logged_on_user'] == NULL)
 else
 {
     ?>
-    <p> Bonjour <?php echo $_SESSION['logged_on_user'];?> </p>
+    <p> User: <?php echo " ".$_SESSION['logged_on_user'];?> </p>
     <a href="sign_out.php" > SIGN OUT </a> <br />
     <?php
 }

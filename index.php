@@ -7,8 +7,7 @@ session_start();
 </head>
 <body>
     <?php include("header.php"); ?>
-    <h2> MILIEU DE LA PAGE </h2>
-    <a href="autrepage.php"> Go sur une autre page</a> <br />
+    <h2> PAGE D'ACCUEIL </h2>
     <?php include("footer.php"); ?>
 </body>
 </html>
