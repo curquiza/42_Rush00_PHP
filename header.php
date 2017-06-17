@@ -1,4 +1,9 @@
-<h1> PoneyLand : buy your poney online !</h1> <br/>  
+<div class="titre-site">
+    <a href="index.php">
+        <img id="logo-accueil" src="http://img11.hostingpics.net/pics/498265CanterlotCastleRainbowDash3.png" alt="logo-accueil"><img/>
+    </a>
+    <h1> PoneyLand : buy your poney online !</h1> <br/>
+</div>
 <?php
 if ($_SESSION['logged_on_user'] == NULL)
 {
