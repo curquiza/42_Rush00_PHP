@@ -4,7 +4,7 @@ session_start();
        
 function ft_auth($login, $passwd)
 {
-    if ($login === NULL || $passwd === NULL || file_exists("private/passwd") === FALSE)
+    if ($login == NULL || $passwd == NULL || file_exists("private/passwd") === FALSE)
         return (FALSE);
     $list = unserialize(file_get_contents("private/passwd"));
     foreach($list as $elem)
