@@ -1,6 +1,20 @@
 <?php
 
 session_start();
+
+?>
+
+<html>
+    <head>
+        <?php include("settings.php"); ?>
+    </head>
+    <body>
+    <?php include("header.php"); ?>
+    <H1>Sign in</H1> <br />
+
+<?php
+
+session_start();
        
 function ft_auth($login, $passwd)
 {
@@ -25,7 +39,10 @@ else
 {
     $_SESSION['logged_on_user'] = "";
     echo "Sorry, we were enable to log you in...\n";
-    echo '<br /><a href="index.php">Back to the main page</a>';
+    echo '<br /><a href="sign_in.php">Try again</a>';
 }
 
-?>
+?>     
+    <?php include("footer.php"); ?>
+    </body>
+</html>
