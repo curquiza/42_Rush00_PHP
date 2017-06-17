@@ -38,8 +38,17 @@ if (ft_auth($_POST['login'], $_POST['passwd']) === TRUE)
 else
 {
     $_SESSION['logged_on_user'] = "";
-    echo "Sorry, we were enable to log you in...\n";
-    echo '<br /><a href="sign_in.php">Try again</a>';
+    ?>
+        <p> Sorry, we were enable to log you in... Try again</p> <br />
+        <form action="sign_in_action.php" method="POST">
+            Login: <input type="text" name="login" value="">
+            <br/ >
+            Password: <input type="password" name="passwd" value="">
+            <br/ >
+            <input type="submit" name="submit" value="OK">
+    </form> <br />
+    <?php
+    
 }
 
 ?>     
