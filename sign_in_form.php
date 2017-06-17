@@ -1,13 +1,7 @@
-<html>
-    <head>
-        <?php include("settings.php"); ?>
-    </head>
-    <body>
-    <?php include("header.php"); ?>
-    <H1>Sign in</H1> <br />
-    <?php include("sign_in_form.php"); ft_sign_in_form(); ?>
+<?php
 
-<!--
+function ft_sign_in_form()
+{?>
     <form action="sign_in_action.php" method="POST">
         Login: <input type="text" name="login" value="">
         <br/ >
@@ -16,7 +10,7 @@
         <input type="submit" name="submit" value="OK">
     </form> <br />
     <a href="sign_up.php">Not a client ? Sign up here !</a> 
--->
-    <?php include("footer.php"); ?>
-    </body>
-</html>
+<?php
+}
+
+?>
