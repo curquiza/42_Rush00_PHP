@@ -16,7 +16,6 @@ session_start();
 		else
 		{
 			$tab = unserialize($file);
-			print_r($tab);
 			foreach($tab as $elem)
 			{
 				?>
