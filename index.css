@@ -27,6 +27,11 @@ html
     background-color:  floralwhite;
 }
 
+.titre-site
+{
+    display: inline-flex;
+}
+
 .sign {
     text-align: center;
 	font-family: Verdana, sans-serif;
