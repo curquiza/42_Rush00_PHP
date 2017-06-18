@@ -18,27 +18,40 @@ function    ft_fill_cart($current, $to_add)
     return ($current);
 }
 
-function    ft_display_cart($elem)
+function    ft_display_cart($full_cart) // ne marche pas
 {
-    $data = ft_getcsv("bdd/product.csv");
-    $product = NULL;
-    foreach($data as $line)
+    $_SESSION['total'] = 0;
+    ?><TABLE><TR align=center>
+                <TH>Picture</TH>
+                <TH>Category</TH>
+                <TH>Breed</TH>
+                <TH>Quantity</TH>
+                <TH>Price</TH>
+            </TR><?php
+    foreach ($full_cart as $line)
     {
-        if ($line[0] == $elem['id'])
+        $product = NULL;
+        $data = ft_getcsv("bdd/product.csv");
+        foreach($data as $search)
         {
-            $product = $line;
-            break ;
+            if ($search[0] == $line['id'])
+            {
+                $product = $search;
+                break ;
+            }
+        }
+        if ($product != NULL)
+        {
+            ?><TR align=center>
+                <TD><img style="height:70px" src="<?php echo $product[6] ?>"/></TD>
+                <TD><?php echo $product[1]?></TD>
+                <TD><?php echo $product[2]?></TD>
+                <TD><?php echo $line['quantity']?></TD>
+                <TD><?php $_SESSION['total'] = $_SESSION['total'] + intval($line['quantity']) * intval($product[4]);
+            echo intval($line['quantity']) * intval($product[4])?> $</TD>
+            </TR><?php             
         }
     }
-    ?>
-        <TR align=center>
-            <TD><img style="height:70px" src="<?php echo $product[6] ?>"/></TD>
-            <TD><?php echo $product[1]?></TD>
-            <TD><?php echo $product[2]?></TD>
-            <TD><?php echo $elem['quantity']?></TD>
-            <TD><?php echo intval($elem['quantity']) * intval($product[4])?> $</TD>
-        </TR>
-    <?php
-    return (intval($elem['quantity']) * intval($product[4]));    
+    ?></TABLE><?php
 }
 ?>

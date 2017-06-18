@@ -4,6 +4,7 @@ session_start();
 <html>
     <head>
         <?php include("settings.php"); ?>
+        <?php include("manage_cart.php"); ?>
     </head>
     <body>
     <?php include("header.php"); ?>
@@ -12,28 +13,26 @@ session_start();
         <?php
             if ($_SESSION['logged_on_user'] != "")
             {
-                print_r($_SESSION['cart']);
-                echo "USER<BR/>";
                 $file = file_get_contents("private/passwd"); // PANIER DS LA BDD USER
                 $user = unserialize($file);
                 foreach($user as $elem)
                 {
                     if ($elem['login'] === $_SESSION['logged_on_user'] && $elem['cart'] != NULL)
-                        print_r($elem['cart']);
+                        ft_display_cart($elem['cart']);  
+
                 }
             }
             else
             {
-                echo "PAS DE USER<BR/>";
                 if ($_SESSION['cart'] != NULL)
-                    print_r($_SESSION['cart']);
+                    ft_display_cart($_SESSION['cart']);
             }
-
         ?>
-        <form action="#" method="post">
+        <H2>TOTAL = <?php echo $_SESSION['total'] ?> $</H2>
+        <form action="action_cart.php" method="post">
             <input type="button" name="submit" value="Remove all...">
             <input type="button" name="submit" value="Buy now !">
-            
+            <input type="hidden" name="total" value="<?php echo $_SESSION['total'] ?>">
         </form>
     </div></div>
     <?php include("footer.php"); ?>
