@@ -14,7 +14,7 @@ function ft_get_index($login, $tab)
 $file = file_get_contents("private/passwd");
 $tab = unserialize($file);
 /* REMOVED */
-if ($_POST['submit'] == "Remove" && $_POST['login'] != NULL)
+if ($_POST['submit'] == "Yes" && $_POST['login'] != NULL)
 {
 	if (($index = ft_get_index($_POST['login'], $tab)) != -1 && $_POST['login'] != "admin")
 	{

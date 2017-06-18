@@ -16,9 +16,7 @@ session_start();
 			<form class="form-admin" action="account_action.php" method="POST">
 				Login: <?php echo $_SESSION['logged_on_user']; ?> <br />
 				<input type="hidden" name="login" value="<?php echo $_SESSION['logged_on_user']; ?>">
-				New login: <input type="text" name="newlogin" value="">
-				<input type="submit" name="submit" value="Change">
-				<input type="submit" name="submit" value="Remove">
+				Delete accout ? <input type="submit" name="submit" value="Yes">
 			</form> <br />
 		<br />
 		<br />
