@@ -43,8 +43,8 @@ session_start();
                         
                         <form action="add_to_cart.php" method="POST">
                             
-                            <select name="quantity"><option value ="0" selected>0</option><?php 
-                    for ($i=1; $i <= $elem[5]; $i++)
+                            <select name="quantity"><option value ="1" selected>1</option><?php 
+                    for ($i=2; $i <= $elem[5]; $i++)
                         echo "<option value =".$i.">".$i."</option>"; ?></select>
                             
                             <input type="hidden" name="id" value="<?php echo $elem[0] ?>">

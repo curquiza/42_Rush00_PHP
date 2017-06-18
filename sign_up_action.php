@@ -17,11 +17,16 @@ function    ft_check_login($list, $new_login)
         {
             if (file_exists("private") === FALSE)
                 mkdir("private");
-            // transvaser le panier en cours ! Et le merger au besoin avec le panier deja rempli !
-            $user = array(array("login" => $_POST['login'], "passwd" => hash("sha512", $_POST['passwd']), "cart" => NULL, "role" => 0));
+            // MERGE DU PANIER
+            if ($_SESSION['cart'] != NULL)
+                $cur_cart = $_SESSION['cart'];
+            else
+                $cur_cart = NULL;            
+            $user = array(array("login" => $_POST['login'], "passwd" => hash("sha512", $_POST['passwd']), "cart" => $cur_cart, "role" => 0));
             $data = serialize($user);
             file_put_contents("private/passwd", $data."\n");
             $_SESSION['logged_on_user'] = $_POST['login'];
+//            $_SESSION['cart'] = array("");
             header("Location: index.php");
         }
         else
@@ -29,12 +34,17 @@ function    ft_check_login($list, $new_login)
             $list = unserialize(file_get_contents("private/passwd"));
             if (ft_check_login($list, $_POST['login']) === TRUE)
             {
-                // transvaser le panier en cours ! Et le merger au besoin avec le panier deja rempli !
-                $new_user = array("login" => $_POST['login'], "passwd" => hash("sha512", $_POST['passwd']), "cart" => NULL, "role" => 0);
+                // MERGE DU PANIER
+                if ($_SESSION['cart'] != NULL)
+                    $cur_cart = $_SESSION['cart'];
+                else
+                    $cur_cart = NULL;
+                $new_user = array("login" => $_POST['login'], "passwd" => hash("sha512", $_POST['passwd']), "cart" => $cur_cart, "role" => 0);
                 $list[] = $new_user;
                 $data = serialize($list);
                 file_put_contents("private/passwd", $data."\n");
                 $_SESSION['logged_on_user'] = $_POST['login'];
+                 
                 header("Location: index.php");
             }
             else

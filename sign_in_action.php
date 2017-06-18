@@ -18,6 +18,23 @@ function ft_auth($login, $passwd)
 if (ft_auth($_POST['login'], $_POST['passwd']) === TRUE)
 {
     $_SESSION['logged_on_user'] = $_POST['login'];
+
+    if ($_SESSION['cart'] != NULL)// MERGE DES PANIERS
+    {
+        $file = file_get_contents("private/passwd");
+        $user = unserialize($file);
+        foreach($user as &$elem)
+        {
+            if ($elem['login'] === $_SESSION['logged_on_user'])
+            {
+                foreach($_SESSION['cart'] as $cart)
+                    $elem['cart'][] = $cart;
+            }
+        }
+        $data = serialize($user);
+        file_put_contents("private/passwd", $data."\n");
+    }
+    
     header("Location: index.php");
 }
 else

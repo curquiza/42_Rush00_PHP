@@ -10,13 +10,43 @@ session_start();
     <H2>My cart</H2>
         <div align=center><div class="product">
         <?php
-            foreach($_SESSION['cart'] as $elem)
+            
+            echo "version SESSION<br />";
+            if ($_SESSION['cart'] != NULL) // PANIER VERSION SESSION
             {
-                print_r($elem);
-                echo "<br />";  
+                foreach($_SESSION['cart'] as $elem)
+                {
+                    print_r($elem);
+                    echo "<br />";  
+                }
             }
+            
+            $file = file_get_contents("private/passwd"); // PANIER DS LA BDD USER
+            $user = unserialize($file);
+            foreach($user as $elem)
+            {
+                if ($elem['login'] === $_SESSION['logged_on_user'])
+                {
+                    echo "version USER<br />";
+                    if ($elem['cart'] != NULL)
+                    {
+                        foreach($elem['cart'] as $elem)
+                        {
+                            print_r($elem);
+                            echo "<br />";  
+                        }                       
+                    }
+
+                }
+            }
+            
         ?>
         </div></div>
+<!--
+        <form align=center action="remove_from_cart.php" method="post">
+            <input type="button" name="submit" value="Remove all">
+        </form>
+-->
     <?php include("footer.php"); ?>
     </body>
 </html>
