@@ -30,8 +30,6 @@ if ($_POST['submit'] == "Remove" && $_POST['category'] != NULL)
 			unset($tab[$index]);
 			$tab = array_values($tab);
 			ft_putcsv2($tab, "bdd/category.csv");
-			//$file = serialize($tab);
-			//file_put_contents("private/passwd", $file);
 			$_SESSION['flag_cat_remove'] = 1;
 		}
 	}
@@ -46,9 +44,6 @@ else if ($_POST['submit'] == "Add" && $_POST['category'] != NULL)
 	{
 		$tab[] = array('login' => $_POST['category']);
 		ft_putcsv2($tab, "bdd/category.csv");
-		//$file = serialize($tab);
-	//	$file = serialize($tab);
-	//	file_put_contents("private/passwd", $file);
 		$_SESSION['flag_cat_add'] = 1;
 	}
 	else
