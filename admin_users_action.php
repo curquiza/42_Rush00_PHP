@@ -1,5 +1,5 @@
 <?
-
+session_start();
 function ft_get_index($login, $tab)
 {
 	$i = 0;
@@ -15,20 +15,47 @@ function ft_get_index($login, $tab)
 $file = file_get_contents("private/passwd");
 $tab = unserialize($file);
 
-if ($_POST['login'] != NULL && $_POST['submit'] == "Remove")
+$_SESSION['flag_users_remove'] = 0;
+$_SESSION['flag_users_add'] = 0;
+
+/* REMOVED */
+if ($_POST['submit'] == "Remove" && $_POST['login'] != NULL)
 {
-	if (($index = ft_get_index($_POST['login'], $tab)) != -1)
+	if ($_POST['login'] == $_SESSION['logged_on_user'])
+		$_SESSION['flag_users_remove'] = -2;
+	else if ($_POST['login'] === "admin")
+		$_SESSION['flag_users_remove'] = -3;
+	else if (($index = ft_get_index($_POST['login'], $tab)) != -1)
 	{
 		unset($tab[$index]);
 		$tab = array_values($tab);
+		$file = serialize($tab);
+		file_put_contents("private/passwd", $file);
+		$_SESSION['flag_users_remove'] = 1;
 	}
-	else if ($_POST['login'] == $_SESSION['logged_on_user'])
-		$_SESSION['flag_users_remove'] = -2;
-	else if ($_POST['login'] == "admin")
-		$_SESSION['flag_users_remove'] = -3;
 	else
 		$_SESSION['flag_users_remove'] = -1;
 }
+
+/* ADDED */
+else if ($_POST['submit'] == "Add" && $_POST['login'] != NULL && ($_POST['role'] == "Yes" || $_POST['role'] == 'No'))
+{
+	if (($index = ft_get_index($_POST['login'], $tab)) == -1)
+	{
+		if ($_POST['role'] == 'Yes')
+			$role = 1;
+		else
+			$role = 0;
+		$tab[] = array('login' => $_POST['login'], 'passwd' => hash('sha512', '123'), 'cart' => NULL, 'role' => $role);
+		$file = serialize($tab);
+		file_put_contents("private/passwd", $file);
+		$_SESSION['flag_users_add'] = 1;
+	}
+	else
+		$_SESSION['flag_users_add'] = -1;
+}
+else if ($_POST['submit'] == "Add")
+		$_SESSION['flag_users_add'] = -2;
 
 header("Location: admin_users_page.php");
 
