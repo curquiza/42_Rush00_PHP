@@ -84,6 +84,23 @@ else if ($_POST['submit'] == "Add")
 	}
 }
 
+/* CHANGE */
+else if ($_POST['submit'] == "Change")
+{
+	if (ft_check_empty_field($_POST) == -1) // tous ne sont pas remplis
+		$_SESSION['flag_prod_change'] = -1;
+	else if (ft_check_cat($_POST['cat1'], $_POST['cat2']) == -1) //une des deux categories n'existe pas
+		$_SESSION['flag_prod_change'] = -2;
+	else // tout est ok
+	{ 
+		$index = ft_get_index($_POST['id'], $tab);
+		$tab[$index] = array($_POST['id'], $_POST['cat1'].",".$_POST['cat2'], $_POST['name'], "bay", $_POST['price'], $_POST['stock'], "");
+		ft_putcsv2($tab, "bdd/product.csv");
+		$_SESSION['flag_prod_change'] = 1;
+	}
+}
+
+
 header("Location: admin_products_page.php");
 
 

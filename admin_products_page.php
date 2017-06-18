@@ -65,7 +65,7 @@ function ft_get_cat2($str)
 		/* Erreurs pour le add */
 		if ($_SESSION['flag_prod_add'] == -1)
 		{
-			?> <br /> <p>Impossible to add : you must fill all the fields (except "Cat2")</p> <?php
+			?> <br /> <p>Impossible to add : you must fill all the fields ("Cat2" is in option)</p> <?php
 		}
 		if ($_SESSION['flag_prod_add'] == -2)
 		{
@@ -79,7 +79,20 @@ function ft_get_cat2($str)
 		{
 			?> <br /> <p>Successfully added</p> <?php
 		}
+
 		/*Erreurs pour le change */
+		if ($_SESSION['flag_prod_change'] == -1)
+		{
+			?> <br /> <p>Impossible to modify : you must fill all the fields (except "Cat2")</p> <?php
+		}
+		if ($_SESSION['flag_prod_change'] == -2)
+		{
+			?> <br /> <p>Impossible to modify : one of the two categories does not exist</p> <?php
+		}
+		else if ($_SESSION['flag_prod_change'] == 1)
+		{
+			?> <br /> <p>Successfully modified</p> <?php
+		}
 
 		/* Re-initialisation des flags */
 		$_SESSION['flag_prod_remove'] = 0;
