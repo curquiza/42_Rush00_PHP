@@ -34,6 +34,10 @@ session_start();
 		{
 			?> <br /> <p>Impossible to remove this category </p> <?php
 		}
+		else if ($_SESSION['flag_cat_remove'] == -2)
+		{
+			?> <br /> <p> You must have at least one category </p> <?php
+		}
 		else if ($_SESSION['flag_cat_remove'] == 1)
 		{
 			?> <br /> <p> Successfuly removed </p> <?php

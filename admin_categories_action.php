@@ -23,12 +23,17 @@ if ($_POST['submit'] == "Remove" && $_POST['category'] != NULL)
 {
 	if (($index = ft_get_index($_POST['category'], $tab)) != -1) //si la categorie existe bien
 	{
-		unset($tab[$index]);
-		$tab = array_values($tab);
-		ft_putcsv2($tab, "bdd/category.csv");
-		//$file = serialize($tab);
-		//file_put_contents("private/passwd", $file);
-		$_SESSION['flag_cat_remove'] = 1;
+		if (count($tab) <= 1)
+			$_SESSION['flag_cat_remove'] = -2;
+		else
+		{
+			unset($tab[$index]);
+			$tab = array_values($tab);
+			ft_putcsv2($tab, "bdd/category.csv");
+			//$file = serialize($tab);
+			//file_put_contents("private/passwd", $file);
+			$_SESSION['flag_cat_remove'] = 1;
+		}
 	}
 	else
 		$_SESSION['flag_cat_remove'] = -1;
