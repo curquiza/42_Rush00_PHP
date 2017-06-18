@@ -1,17 +1,35 @@
+<?php
+
+function ft_get_role($login)
+{
+	$file = file_get_contents("private/passwd");
+	$tab = unserialize($file);
+	foreach($tab as $elem)
+	{
+		if ($elem['login'] == $login)
+			return ($elem['role']);
+	}
+	return (0);
+}
+
+?>
+
 <div class="titre-site">
     <a href="index.php">
         <img id="logo-accueil" src="https://ouranos.equideow.com/media/equideo/image/chevaux/special/300/adulte/gaia_v1828806360.png" alt="logo-accueil"><img/>
     </a>
     <h1> PoneyLand : buy your poney online !</h1> <br/>
 </div>
+
 <?php
+
 if ($_SESSION['logged_on_user'] == NULL)
 {
-?>
-<a href="sign_in.php" > SIGN IN </a> <br />
-<a href="sign_up.php" > SIGN UP </a> <br />
-<div><a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a><span class="glyphicon">&#xe116;</span></div>
-<?php
+	?>
+	<a href="sign_in.php" > SIGN IN </a> <br />
+	<a href="sign_up.php" > SIGN UP </a> <br />
+	<div><a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a><span class="glyphicon">&#xe116;</span></div>
+	<?php
 }
 else
 {
@@ -29,9 +47,13 @@ else
     $data = ft_getcsv("bdd/category.csv");
     foreach($data as $elem)
     {
-        ?><a class="category" href="all_products.php?category=<?php echo $elem[0] ?>"><?php echo $elem[0] ?></a><?php
+        ?> <a class="category" href="all_products.php?category=<?php echo $elem[0] ?>"><?php echo $elem[0] ?></a> <?php
     }
-        
+    if ( ft_get_role($_SESSION['logged_on_user']) == 1) 
+	{
+		?> <a class="category2" href="admin_page.php"> ADMIN </a> <?php
+	}
+
 ?>
 <!--
 //    <a class="category" href="horse.php">Horses</a>
