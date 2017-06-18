@@ -25,7 +25,8 @@ session_start();
                         <p><?php echo $elem[2] ?></p>
                         <div style="font-style:italic"><?php echo $elem[1] ?></div>
                         <div>
-                            <?php   
+                            
+                            <?php   // SOLD OUT
                     if ($elem[5] == 0)
                 {
                     echo '<p style="background-color:darkmagenta;color:white">SOLD OUT !</p>';
@@ -36,17 +37,20 @@ session_start();
                     echo "<br />";
                     $filigrane = ""; 
                 } ?>
+                            
                             <img <?php echo $filigrane ?> src="<?php echo $elem[6] ?>"/></div><br />
                         <div><?php echo $elem[4] ?></div>  
+                        
                         <form action="add_to_cart.php" method="POST">
                             
-                            <select><input<?php 
-                    for ($i=0; $i <= $elem[5]; $i++)
-                        echo "<option value =".$i.">".$i."</option>"; ?>></select>
-                                
-<!--                                <input type="number" name="quant" min="1" max="<?php echo $elem[5] ?>" step="1" value="0">-->
-                            <input type="hidden" name="id" name="<?php echo $elem[0] ?>">
-                            <input class="button_buy" type="submit" name="<?php echo $elem[0] ?>" value="I want it !">
+                            <select name="quantity"><option value ="0" selected>0</option><?php 
+                    for ($i=1; $i <= $elem[5]; $i++)
+                        echo "<option value =".$i.">".$i."</option>"; ?></select>
+                            
+                            <input type="hidden" name="id" value="<?php echo $elem[0] ?>">
+                            
+                            <input class="button_buy" type="submit" name="submit" value="I want it !">
+                            
                         </form><br /></div>
                     </div>
                  <?php endif;
