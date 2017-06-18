@@ -19,7 +19,6 @@ session_start();
                 {
                     if ($elem['login'] === $_SESSION['logged_on_user'] && $elem['cart'] != NULL)
                         ft_display_cart($elem['cart']);  
-
                 }
             }
             else
