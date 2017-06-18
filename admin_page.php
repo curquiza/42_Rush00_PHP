@@ -9,29 +9,6 @@ session_start();
     <?php include("header.php"); ?>
     <H2> Admin </H2>
 		<div align=center> <div class="product">
-
-        <?php
-            /*$data = ft_getcsv("bdd/product.csv");
-            if ($_GET != NULL)
-                $filter = $_GET['category'];
-            foreach($data as $elem)
-            {
-                if (ft_filter($elem[1], $filter) === TRUE) : ?>
-                    <div class="horse"><div align=center>
-                        <p><?php echo $elem[2] ?></p>
-                        <div style="font-style:italic"><?php echo $elem[1] ?></div>
-                        <div>
-                            <?php   
-                    if ($elem[5] == 0)
-                {
-                    echo '<p style="background-color:darkmagenta;color:white">SOLD OUT !</p>';
-                    $filigrane = 'style="opacity:0.2";';
-                }
-                    else
-                {
-                    echo "<br />";
-                    $filigrane = ""; 
-					}*/ ?>
 		   <a class="admin-icone" href="admin_users_page.php"> 
 				<div>
 					<p> Users </p> 
@@ -44,8 +21,12 @@ session_start();
 					<img class="logo-admin" src="http://www.free-icons-download.net/images/label-icon-63765.png"/>
 				</div>
 			</a>
-
- 
+			<a class="admin-icone" href="admin_products_page.php"> 
+				<div>
+					<p> Products </p> 
+					<img class="logo-admin" src="http://www.freeiconspng.com/uploads/production-icon-26.jpg"/>
+				</div>
+			</a>
         </div></div>
     <?php include("footer.php"); ?>
     </body>
