@@ -49,6 +49,7 @@ else
     {
         ?> <a class="category" href="all_products.php?category=<?php echo $elem[0] ?>"><?php echo $elem[0] ?></a> <?php
     }
+    ?> <a class="category2" href="cart.php">My Cart</a> <?php
     if ( ft_get_role($_SESSION['logged_on_user']) == 1) 
 	{
 		?> <a class="category2" href="admin_page.php"> ADMIN </a> <?php
