@@ -19,8 +19,8 @@ $tab[] = array('name' => 'Foal', 'id' => 2);
 $tab[] = array('name' => 'Legendary', 'id' => 3);
 ft_putcsv2($tab, "bdd/category.csv");
 
+/* creation du fichier order */
 unset($tab);
-
 $tab[] = array('1','Horse','Mustang','bay','4999','15','https://i.skyrock.net/2403/75432403/pics/2943106009_1_7.png');
 $tab[] = array('2','Horse','Pure-Bred Spanish Horse','grey','4999','19','https://www.equideow.com/media/equideo/image/chevaux/adulte/iberique/normal/300/gr-pml.png');
 $tab[] = array('17','Poney','Fjord','isabel','1799','10','https://www.equideow.com/media/equideo/image/chevaux/adulte/fjord/normal/300/bbk.png');
