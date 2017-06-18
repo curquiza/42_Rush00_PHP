@@ -39,7 +39,7 @@ session_start();
                 } ?>
                             
                             <img <?php echo $filigrane ?> src="<?php echo $elem[6] ?>"/></div><br />
-                        <div><?php echo $elem[4] ?></div>  
+                        <div><?php echo $elem[4] ?> $</div>  
                         
                         <form action="add_to_cart.php" method="POST">
                             

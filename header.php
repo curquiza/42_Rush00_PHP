@@ -18,7 +18,7 @@ function ft_get_role($login)
     <a href="index.php">
         <img id="logo-accueil" src="https://ouranos.equideow.com/media/equideo/image/chevaux/special/300/adulte/gaia_v1828806360.png" alt="logo-accueil"><img/>
     </a>
-    <h1> PoneyLand : buy your poney online !</h1> <br/>
+    <h1> PoneyLand : buy your poney online!</h1> <br/>
 </div>
 
 <?php

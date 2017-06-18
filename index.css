@@ -7,7 +7,7 @@
 
 h1
 {
-    font-size: 40px;
+    font-size: 50px;
     font-family: 'Covered By Your Grace', sans-serif;
 	color: #41292C;
 }
@@ -20,7 +20,6 @@ H2
 	color: #41292C;
 }
 
-
 html
 {
     font-family: Verdana, sans-serif;
@@ -30,6 +29,7 @@ html
 .titre-site
 {
     display: inline-flex;
+    vertical-align: middle;
 }
 
 .sign {
