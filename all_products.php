@@ -16,6 +16,7 @@ session_start();
         <div align=center><div class="product">
         <?php
             $data = ft_getcsv("bdd/product.csv");
+//            print_r($data);
             if ($_GET != NULL)
                 $filter = $_GET['category'];
             foreach($data as $elem)

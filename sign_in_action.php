@@ -28,11 +28,8 @@ if (ft_auth($_POST['login'], $_POST['passwd']) === TRUE)
         {
             if ($elem['login'] === $_SESSION['logged_on_user'])
             {
-                foreach($_SESSION['cart'] as $cart)
-                {
-//                    $elem['cart'][] = $cart;
-                    $elem['cart'] = ft_fill_cart($elem['cart'], $cart);    
-                }
+                   if ($_SESSION['cart'] != NULL)
+                       $elem['cart'] = $_SESSION['cart'];
             }
         }
         $data = serialize($user);
