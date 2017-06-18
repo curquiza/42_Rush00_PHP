@@ -26,9 +26,10 @@ function ft_get_role($login)
 if ($_SESSION['logged_on_user'] == NULL)
 {
 	?>
-	<a href="sign_in.php" > SIGN IN </a> <br />
-	<a href="sign_up.php" > SIGN UP </a> <br />
-	<div><a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a><span class="glyphicon">&#xe116;</span></div>
+    <DIV align=right>
+	<a class="sign" href="sign_in.php" > SIGN IN </a> 
+	<a class="sign" href="sign_up.php" > SIGN UP </a> <br />
+    </DIV>
 	<?php
 }
 else
@@ -49,7 +50,7 @@ else
     {
         ?> <a class="category" href="all_products.php?category=<?php echo $elem[0] ?>"><?php echo $elem[0] ?></a> <?php
     }
-    ?> <a class="category2" href="cart.php">My Cart</a> <?php
+    ?> <a class="category2" href="cart.php">My Cart &#xe116</a> <?php
     if ( ft_get_role($_SESSION['logged_on_user']) == 1) 
 	{
 		?> <a class="category2" href="admin_page.php"> ADMIN </a> <?php
