@@ -16,6 +16,14 @@ function    ft_putcsv($data)
     fclose($fd);
 }
 
+function    ft_putcsv2($data, $path)
+{
+    $fd = fopen($path, "w");
+    foreach($data as $elem)
+        fputcsv($fd, $elem);
+    fclose($fd);
+}
+
 ////function    ft_getcategory()
 ////{
 //    $fd = fopen("bdd/category.csv", "r");

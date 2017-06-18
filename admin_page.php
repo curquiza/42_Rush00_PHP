@@ -32,15 +32,21 @@ session_start();
                     echo "<br />";
                     $filigrane = ""; 
 					}*/ ?>
-		   <a href="admin_users_page.php"> 
-				<div class="admin-icone">
+		   <a class="admin-icone" href="admin_users_page.php"> 
+				<div>
 					<p> Users </p> 
 					<img src="http://files.softicons.com/download/business-icons/mono-business-icons-by-custom-icon-design/png/256x256/users.png"/>
-				</div><br />
+				</div>
+			</a >
+			<a class="admin-icone" href="admin_categories_page.php"> 
+				<div>
+					<p> Categories </p> 
+					<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRi5WjlY1DMD3cZq6o__7f1djC_eHcRngbQTXbw9V8jJ1zzIBRx"/>
+				</div>
 			</a>
+
  
         </div></div>
     <?php include("footer.php"); ?>
     </body>
 </html>
-
