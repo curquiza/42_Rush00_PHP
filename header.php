@@ -17,7 +17,7 @@ else
 {
     ?>
     <p> User: <?php echo " ".$_SESSION['logged_on_user'];?> </p>
-    <a href="sign_out.php" > SIGN OUT </a> <br />
+    <a href="sign_out.php" > LOG OUT </a> <br />
     <?php
 }
 ?>
