@@ -27,6 +27,12 @@ session_start();
 					<img class="logo-admin" src="http://www.freeiconspng.com/uploads/production-icon-26.jpg"/>
 				</div>
 			</a>
+			<a class="admin-icone" href="admin_orders_page.php"> 
+				<div>
+					<p> Orders </p> 
+					<img class="logo-admin" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR5xNw1cZTER7IYVfZIwlJYpStdDDVcaEWAylPGSyfVxDmtwixWxg"/>
+				</div>
+			</a>
         </div></div>
     <?php include("footer.php"); ?>
     </body>
