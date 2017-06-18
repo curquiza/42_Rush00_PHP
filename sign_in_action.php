@@ -23,12 +23,16 @@ if (ft_auth($_POST['login'], $_POST['passwd']) === TRUE)
     {
         $file = file_get_contents("private/passwd");
         $user = unserialize($file);
+        include('manage_cart.php');
         foreach($user as &$elem)
         {
             if ($elem['login'] === $_SESSION['logged_on_user'])
             {
                 foreach($_SESSION['cart'] as $cart)
-                    $elem['cart'][] = $cart;
+                {
+//                    $elem['cart'][] = $cart;
+                    $elem['cart'] = ft_fill_cart($elem['cart'], $cart);    
+                }
             }
         }
         $data = serialize($user);
