@@ -1,0 +1,34 @@
+<?php
+session_start();
+
+if ($_SESSION['logged_on_user'] == "")
+//    header("Location: sign_in.php");
+    
+if ($_POST['submit'] == "Buy now !" && $_SESSION['logged_on_user'] != "" && $_SESSION['cart'] != "") // exclure panier vide
+{
+    $order = array('login' => $_SESSION['logged_on_user'], 'cart' => $_SESSION['cart'], 'total' => $_POST['total']);
+    $content = serialize($order);
+    file_put_contents("bdd/order", $content."\n", FILE_APPEND);
+    
+    // VIDER LE PANIER
+    $file = file_get_contents("private/passwd");
+    $user = unserialize($file);
+    foreach($user as &$elem)
+    {
+        if ($elem['login'] === $_SESSION['logged_on_user'])
+        {
+            $elem['cart'] = NULL;  
+            $_SESSION['cart'] = NULL;
+            echo "delete";
+        }
+    }   
+//    header("Location: index.php");
+    
+}
+
+if ($_POST['submit'] == "Remove all...")
+{
+    
+}
+    
+?>

@@ -29,11 +29,13 @@ session_start();
             }
         ?>
         <H2>TOTAL = <?php echo $_SESSION['total'] ?> $</H2>
-        <form action="action_cart.php" method="post">
-            <input type="button" name="submit" value="Remove all...">
-            <input type="button" name="submit" value="Buy now !">
+        
+        <form action="action_cart.php" method="POST">
+            <input type="submit" name="submit" value="Remove all...">
+            <input type="submit" name="submit" value="Buy now !">
             <input type="hidden" name="total" value="<?php echo $_SESSION['total'] ?>">
         </form>
+            
     </div></div>
     <?php include("footer.php"); ?>
     </body>
