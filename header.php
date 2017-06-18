@@ -1,6 +1,6 @@
 <div class="titre-site">
     <a href="index.php">
-        <img id="logo-accueil" src="http://img11.hostingpics.net/pics/498265CanterlotCastleRainbowDash3.png" alt="logo-accueil"><img/>
+        <img id="logo-accueil" src="https://ouranos.equideow.com/media/equideo/image/chevaux/special/300/adulte/gaia_v1828806360.png" alt="logo-accueil"><img/>
     </a>
     <h1> PoneyLand : buy your poney online !</h1> <br/>
 </div>
