@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-if ($_SESSION['cart'] == NULL)
+if ($_SESSION['cart'] == "")
     header("Location: cart.php");
 
-if ($_POST['submit'] == "Buy now !" && $_SESSION['logged_on_user'] == "")
+else if ($_POST['submit'] == "Buy now !" && $_SESSION['logged_on_user'] == "")
     header("Location: sign_in.php");
     
 if ($_POST['submit'] == "Buy now !" && $_SESSION['logged_on_user'] != "" && $_SESSION['cart'] != "") // exclure panier vide
@@ -58,7 +58,7 @@ if ($_POST['submit'] == "Remove all..." && $_SESSION['cart'] != "")
     header("Location: cart.php");
 }
 
-header("Location: cart.php");
+//header("Location: cart.php");
 
     
 ?>
