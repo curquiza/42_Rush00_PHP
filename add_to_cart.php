@@ -3,8 +3,10 @@ session_start();
 
 function    ft_fill_cart($current, $to_add)
 {
+    if ($current == NULL)
+        return(array($to_add));
     $new = 1;
-    foreach($current as $elem)
+    foreach($current as &$elem)
     {
         if ($elem['id'] === $to_add['id'])
         {
@@ -14,13 +16,14 @@ function    ft_fill_cart($current, $to_add)
         }
     }
     if ($new === 1)
-        $elem['cart'][] = array("id" => $_POST['id'], "quantity" => $_POST['quantity']);
+        $current[] = array("id" => $_POST['id'], "quantity" => $_POST['quantity']);
+    return ($current);
 }
 
 $cart = $_SESSION['cart'];
 
-//ft_fill_cart($cart, array("id" => $_POST['id'], "quantity" => $_POST['quantity']));
-$cart[] = array("id" => $_POST['id'], "quantity" => $_POST['quantity']);
+$cart = ft_fill_cart($cart, array("id" => $_POST['id'], "quantity" => $_POST['quantity']));
+//$cart[] = array("id" => $_POST['id'], "quantity" => $_POST['quantity']);
 
 $_SESSION['cart'] = $cart;
 
@@ -31,8 +34,8 @@ if ($_SESSION['logged_on_user'] != "")
     foreach($user as &$elem)
     {
         if ($elem['login'] === $_SESSION['logged_on_user'])
-//            ft_fill_cart($elem['cart'], array("id" => $_POST['id'], "quantity" => $_POST['quantity']));
-            $elem['cart'][] = array("id" => $_POST['id'], "quantity" => $_POST['quantity']);
+            $elem['cart'] = ft_fill_cart($elem['cart'], array("id" => $_POST['id'], "quantity" => $_POST['quantity']));
+//            $elem['cart'][] = array("id" => $_POST['id'], "quantity" => $_POST['quantity']);
     }
     $data = serialize($user);
     file_put_contents("private/passwd", $data."\n");
